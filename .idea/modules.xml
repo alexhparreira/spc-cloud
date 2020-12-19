@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/api-gateway/ApiGateway.iml" filepath="$PROJECT_DIR$/api-gateway/ApiGateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/consumidor-ws/consumidor.iml" filepath="$PROJECT_DIR$/consumidor-ws/consumidor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eureka-server/eureka-server.iml" filepath="$PROJECT_DIR$/eureka-server/eureka-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pagamento-ws/pagamento-ws.iml" filepath="$PROJECT_DIR$/pagamento-ws/pagamento-ws.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spc-cloud.iml" filepath="$PROJECT_DIR$/spc-cloud.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spc-core/spc-core.iml" filepath="$PROJECT_DIR$/spc-core/spc-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/users-ws/users-ws.iml" filepath="$PROJECT_DIR$/users-ws/users-ws.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,15 @@
+  server:
+  port: 8443
+    ssl:
+      enabled: true
+      key-alias: tomcat
+      key-store: /etc/letsencrypt/live/doctors.kadimahlog.com.br/keystore.p12
+      key-store-password: Onfl@2522
+      key-store-type: PKCS12
+
+
+eureka:
+  client:
+    fetch-registry: false
+    register-with-eureka: false
+
