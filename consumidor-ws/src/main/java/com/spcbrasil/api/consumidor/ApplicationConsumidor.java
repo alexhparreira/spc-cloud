@@ -7,6 +7,7 @@ import org.codehaus.plexus.util.xml.pull.XmlPullParserException;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
 
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
@@ -28,6 +29,7 @@ import javax.servlet.Filter;
 @SpringBootApplication
 @EnableDiscoveryClient
 @EnableSwagger2
+@EnableFeignClients
 @EnableMongoRepositories(basePackages = "com.spcbrasil.api.consumidor.data")
 @EnableAsync
 public class ApplicationConsumidor {
@@ -57,6 +59,7 @@ public class ApplicationConsumidor {
 								.description("Consumidor  API v2.0")
 								.build()
 				);
+
 	}
 
 	@Bean
