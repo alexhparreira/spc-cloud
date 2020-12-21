@@ -17,7 +17,7 @@ public class QPagamento extends EntityPathBase<Pagamento> {
 
     private static final long serialVersionUID = 911736161L;
 
-    public static final QPagamento pagamento = new QPagamento("consumidor");
+    public static final QPagamento pagamento = new QPagamento("pagamento");
 
     public final StringPath consumidorId = createString("consumidorId");
 

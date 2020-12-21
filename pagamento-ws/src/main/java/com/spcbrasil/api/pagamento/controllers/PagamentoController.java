@@ -1,6 +1,7 @@
 package com.spcbrasil.api.pagamento.controllers;
 
 import com.spcbrasil.api.pagamento.service.PagamentoService;
+import com.spcbrasil.api.shared.InfoPagamentoDTO;
 import com.spcbrasil.api.shared.PagamentoDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
@@ -25,14 +26,15 @@ public class PagamentoController {
 
 
 	@GetMapping(value = "/consumidor/{id}",  produces = { MediaType.APPLICATION_JSON_VALUE })
-	public ResponseEntity<List<PagamentoDTO>> getById(@PathVariable String id) {
+	public ResponseEntity<InfoPagamentoDTO> getById(@PathVariable String id) {
 
-		List<PagamentoDTO> response = new ArrayList<>();
 
-		List<PagamentoDTO> pgtos = pagamentoService.findByConsumidorId(id);
+		InfoPagamentoDTO response = pagamentoService.findByConsumidorId(id);
 
 		return ResponseEntity.status(HttpStatus.OK).body(response);
 	}
+
+
 
 
 

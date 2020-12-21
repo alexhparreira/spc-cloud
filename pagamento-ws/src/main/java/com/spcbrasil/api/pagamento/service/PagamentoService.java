@@ -1,9 +1,8 @@
 package com.spcbrasil.api.pagamento.service;
 
-import com.spcbrasil.api.shared.PagamentoDTO;
+import com.spcbrasil.api.shared.InfoPagamentoDTO;
 
-import java.util.List;
 
 public interface PagamentoService {
-    List<PagamentoDTO> findByConsumidorId(String id);
+    InfoPagamentoDTO findByConsumidorId(String id);
 }
