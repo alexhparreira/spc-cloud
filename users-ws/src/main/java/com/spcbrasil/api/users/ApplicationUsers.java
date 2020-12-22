@@ -5,6 +5,7 @@ import java.io.IOException;
 
 import org.codehaus.plexus.util.xml.pull.XmlPullParserException;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.context.annotation.Bean;
@@ -30,6 +31,7 @@ import javax.servlet.Filter;
 @EnableSwagger2
 @EnableMongoRepositories(basePackages = "com.spcbrasil.api.users.data")
 @EnableAsync
+@EnableAutoConfiguration
 public class ApplicationUsers {
 
 	public static void main(String[] args) {
