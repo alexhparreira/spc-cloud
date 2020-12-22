@@ -5,8 +5,10 @@ import com.spcbrasil.api.shared.InfoPagamentoDTO;
 
 public interface ConsumidorService {
 
-    ConsumidorDTO findByCPF(Long id);
+    ConsumidorDTO findByCPF(Long cpf);
 
-    public InfoPagamentoDTO getPagamentos(String consumidorId);
+    InfoPagamentoDTO getPagamentos(String consumidorId);
+
+    InfoPagamentoDTO getPagamentosUsingFeign(String consumidorId);
 
 }

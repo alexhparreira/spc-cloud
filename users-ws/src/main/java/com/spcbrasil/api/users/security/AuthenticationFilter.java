@@ -80,10 +80,9 @@ public class AuthenticationFilter extends UsernamePasswordAuthenticationFilter {
         AddressDTO addressDTO = userDetails.getAddress();
 
         res.setContentType("application/json");
-
         String token = Jwts.builder()
                 .setSubject(userDetails.getId())
-                .setExpiration(new Date(System.currentTimeMillis() + Long.parseLong(environment.getProperty("token.expiration_time"))))
+                    .setExpiration(new Date(System.currentTimeMillis() + Long.parseLong(environment.getProperty("token.expiration_time"))))
                 .signWith(SignatureAlgorithm.HS512, environment.getProperty("token.secret") )
                 .compact();
         

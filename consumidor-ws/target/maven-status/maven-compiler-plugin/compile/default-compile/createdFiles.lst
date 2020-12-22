@@ -1,0 +1,15 @@
+com/spcbrasil/api/consumidor/security/WebSecurity$1.class
+com/spcbrasil/api/consumidor/data/ConsumidorRepository.class
+com/spcbrasil/api/consumidor/mongo/MongoConfig.class
+com/spcbrasil/api/consumidor/security/WebSecurity.class
+com/spcbrasil/api/consumidor/controllers/ConsumidorController.class
+com/spcbrasil/api/consumidor/controllers/HomeController.class
+com/spcbrasil/api/consumidor/feignclient/PgtoFallback.class
+com/spcbrasil/api/consumidor/service/impl/ConsumidorServiceImpl.class
+com/spcbrasil/api/consumidor/service/mapper/ConsumidorMapper.class
+com/spcbrasil/api/consumidor/config/AppConfig.class
+com/spcbrasil/api/consumidor/ApplicationConsumidor.class
+com/spcbrasil/api/consumidor/config/CacheConfig.class
+com/spcbrasil/api/consumidor/feignclient/PagamentoServiceClient.class
+com/spcbrasil/api/consumidor/decoder/FeignErrorDecoder.class
+com/spcbrasil/api/consumidor/service/ConsumidorService.class

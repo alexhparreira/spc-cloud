@@ -6,6 +6,8 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/consumidor-ws/pom.xml" />
         <option value="$PROJECT_DIR$/pagamento-ws/pom.xml" />
+        <option value="$PROJECT_DIR$/../spc-config-server/pom.xml" />
+        <option value="$PROJECT_DIR$/config-server/pom.xml" />
       </list>
     </option>
   </component>

@@ -2,12 +2,14 @@ package com.spcbrasil.api.consumidor.service.impl;
 
 
 import com.spcbrasil.api.consumidor.data.ConsumidorRepository;
+import com.spcbrasil.api.consumidor.feignclient.PagamentoServiceClient;
 import com.spcbrasil.api.consumidor.service.mapper.ConsumidorMapper;
 import com.spcbrasil.api.data.model.Consumidor;
 import com.spcbrasil.api.consumidor.service.ConsumidorService;
 import com.spcbrasil.api.shared.ConsumidorDTO;
 import com.spcbrasil.api.shared.InfoPagamentoDTO;
 import com.spcbrasil.api.shared.PagamentoDTO;
+import feign.FeignException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
@@ -28,6 +30,9 @@ public class ConsumidorServiceImpl implements ConsumidorService {
     @Autowired
     private RestTemplate restTemplate;
 
+    @Autowired
+    private PagamentoServiceClient pagamentoServiceClient;
+
     @Override
     public ConsumidorDTO findByCPF(Long cpf) {
 
@@ -35,11 +40,9 @@ public class ConsumidorServiceImpl implements ConsumidorService {
 
         ConsumidorDTO consumidorDTO = new ConsumidorDTO();
 
-        InfoPagamentoDTO infoPgto = getPagamentos(consumidor.getId());
+        InfoPagamentoDTO infoPgto = getPagamentosUsingFeign(consumidor.getId());
 
-        consumidorDTO.setPagamentos(infoPgto.getPagamentos());
-
-        consumidorMapper.entityToDTO(consumidor,null,consumidorDTO);
+        consumidorMapper.entityToDTO(consumidor,infoPgto,consumidorDTO);
 
         return consumidorDTO;
     }
@@ -47,13 +50,26 @@ public class ConsumidorServiceImpl implements ConsumidorService {
     @Override
     public  InfoPagamentoDTO getPagamentos(String consumidorId){
 
-        ResponseEntity<InfoPagamentoDTO> response = restTemplate.exchange("http://pagamento-ws/",
+        ResponseEntity<InfoPagamentoDTO> response = restTemplate.exchange("http://pagamento-ws/pgto/consumidor/"+consumidorId,
                 HttpMethod.GET,null,InfoPagamentoDTO.class);
 
         return response.getBody();
 
+    }
 
+    @Override
+    public  InfoPagamentoDTO getPagamentosUsingFeign(String consumidorId){
 
+        InfoPagamentoDTO response = null;
+
+        try {
+              response = pagamentoServiceClient.getById(consumidorId);
+
+        } catch (FeignException e){
+            e.printStackTrace();
+        }
+
+        return response;
 
     }
 

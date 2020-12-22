@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="config-server" />
         <module name="pagamento-ws" />
         <module name="users-ws" />
         <module name="eureka-server" />
@@ -16,17 +17,21 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="ApiGateway" target="1.8" />
+      <module name="config-server" target="1.8" />
       <module name="consumidor" target="1.8" />
       <module name="eureka-server" target="1.8" />
       <module name="pagamento-ws" target="1.8" />
       <module name="spc-cloud" target="1.5" />
+      <module name="spc-config-server" target="1.5" />
       <module name="spc-core" target="1.8" />
+      <module name="SPCApiConfigServer" target="1.5" />
       <module name="users-ws" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="ApiGateway" options="-parameters" />
+      <module name="config-server" options="-parameters" />
       <module name="consumidor" options="-parameters" />
       <module name="eureka-server" options="-parameters" />
       <module name="pagamento-ws" options="-parameters" />

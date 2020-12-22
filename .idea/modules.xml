@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/api-gateway/ApiGateway.iml" filepath="$PROJECT_DIR$/api-gateway/ApiGateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/config-server/config-server.iml" filepath="$PROJECT_DIR$/config-server/config-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/consumidor-ws/consumidor.iml" filepath="$PROJECT_DIR$/consumidor-ws/consumidor.iml" />
       <module fileurl="file://$PROJECT_DIR$/eureka-server/eureka-server.iml" filepath="$PROJECT_DIR$/eureka-server/eureka-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/pagamento-ws/pagamento-ws.iml" filepath="$PROJECT_DIR$/pagamento-ws/pagamento-ws.iml" />

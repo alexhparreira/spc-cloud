@@ -1,0 +1,13 @@
+/Users/aparreira/xgather-workspace/spc-cloud/consumidor-ws/src/main/java/com/spcbrasil/api/consumidor/service/impl/ConsumidorServiceImpl.java
+/Users/aparreira/xgather-workspace/spc-cloud/consumidor-ws/src/main/java/com/spcbrasil/api/consumidor/ApplicationConsumidor.java
+/Users/aparreira/xgather-workspace/spc-cloud/consumidor-ws/src/main/java/com/spcbrasil/api/consumidor/mongo/MongoConfig.java
+/Users/aparreira/xgather-workspace/spc-cloud/consumidor-ws/src/main/java/com/spcbrasil/api/consumidor/data/ConsumidorRepository.java
+/Users/aparreira/xgather-workspace/spc-cloud/consumidor-ws/src/main/java/com/spcbrasil/api/consumidor/controllers/HomeController.java
+/Users/aparreira/xgather-workspace/spc-cloud/consumidor-ws/src/main/java/com/spcbrasil/api/consumidor/config/CacheConfig.java
+/Users/aparreira/xgather-workspace/spc-cloud/consumidor-ws/src/main/java/com/spcbrasil/api/consumidor/security/WebSecurity.java
+/Users/aparreira/xgather-workspace/spc-cloud/consumidor-ws/src/main/java/com/spcbrasil/api/consumidor/config/AppConfig.java
+/Users/aparreira/xgather-workspace/spc-cloud/consumidor-ws/src/main/java/com/spcbrasil/api/consumidor/feignclient/PagamentoServiceClient.java
+/Users/aparreira/xgather-workspace/spc-cloud/consumidor-ws/src/main/java/com/spcbrasil/api/consumidor/service/mapper/ConsumidorMapper.java
+/Users/aparreira/xgather-workspace/spc-cloud/consumidor-ws/src/main/java/com/spcbrasil/api/consumidor/controllers/ConsumidorController.java
+/Users/aparreira/xgather-workspace/spc-cloud/consumidor-ws/src/main/java/com/spcbrasil/api/consumidor/decoder/FeignErrorDecoder.java
+/Users/aparreira/xgather-workspace/spc-cloud/consumidor-ws/src/main/java/com/spcbrasil/api/consumidor/service/ConsumidorService.java
