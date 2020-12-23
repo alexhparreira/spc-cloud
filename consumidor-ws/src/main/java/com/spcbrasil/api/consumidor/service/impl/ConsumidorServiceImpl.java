@@ -3,7 +3,6 @@ package com.spcbrasil.api.consumidor.service.impl;
 
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.spcbrasil.api.consumidor.data.ConsumidorRepository;
-import com.spcbrasil.api.consumidor.feignclient.PagamentoServiceClient;
 import com.spcbrasil.api.consumidor.service.mapper.ConsumidorMapper;
 import com.spcbrasil.api.data.model.Consumidor;
 import com.spcbrasil.api.consumidor.service.ConsumidorService;
@@ -35,9 +34,6 @@ public class ConsumidorServiceImpl implements ConsumidorService {
     @Autowired
     private RestTemplate restTemplate;
 
-    @Autowired
-    private PagamentoServiceClient pagamentoServiceClient;
-
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Override
@@ -47,7 +43,7 @@ public class ConsumidorServiceImpl implements ConsumidorService {
 
         ConsumidorDTO consumidorDTO = new ConsumidorDTO();
 
-        InfoPagamentoDTO infoPgto = getPagamentosUsingFeign(consumidor.getId());
+        InfoPagamentoDTO infoPgto = getPagamentos(consumidor.getId());
 
         consumidorMapper.entityToDTO(consumidor, infoPgto, consumidorDTO);
 
@@ -64,30 +60,6 @@ public class ConsumidorServiceImpl implements ConsumidorService {
 
     }
 
-
-    @Override
-    public InfoPagamentoDTO getPagamentosUsingFeign(String consumidorId) {
-
-        InfoPagamentoDTO response = null;
-
-        try {
-
-
-            logger.info("ANTES de buscar os pagamentos");
-
-            response = pagamentoServiceClient.getById(consumidorId);
-
-
-            logger.info("DEPOIS de buscar os pagamentos");
-
-        } catch (FeignException e){
-            e.printStackTrace();
-        }
-
-
-        return response;
-
-    }
 
 
 

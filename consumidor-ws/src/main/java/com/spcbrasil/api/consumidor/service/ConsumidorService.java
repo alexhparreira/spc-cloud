@@ -9,6 +9,6 @@ public interface ConsumidorService {
 
     InfoPagamentoDTO getPagamentos(String consumidorId);
 
-    InfoPagamentoDTO getPagamentosUsingFeign(String consumidorId);
+
 
 }
