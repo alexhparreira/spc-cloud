@@ -18,8 +18,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-//@FeignClient(name = "pagamento-ws")
-@FeignClient(name = "pagamento-ws",fallbackFactory = PgtoFallbackFactory.class)
+
+@FeignClient(name = "pagamento-ws", fallbackFactory = PgtoFallbackFactory.class)
 @Qualifier("pagamentoServiceClient")
 public interface PagamentoServiceClient {
 
@@ -38,6 +38,8 @@ class PgtoFallbackFactory implements FallbackFactory<PagamentoServiceClient> {
         return new PagamentoServiceClientFallback(cause);
     }
 }
+
+
 
 class PagamentoServiceClientFallback implements PagamentoServiceClient{
 
