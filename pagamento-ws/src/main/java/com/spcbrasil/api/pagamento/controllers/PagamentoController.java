@@ -4,6 +4,7 @@ import com.spcbrasil.api.pagamento.service.PagamentoService;
 import com.spcbrasil.api.shared.InfoPagamentoDTO;
 import com.spcbrasil.api.shared.PagamentoDTO;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 import org.springframework.core.env.Environment;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -16,6 +17,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("pgto")
+@EnableCircuitBreaker
 public class PagamentoController {
 
 	@Autowired

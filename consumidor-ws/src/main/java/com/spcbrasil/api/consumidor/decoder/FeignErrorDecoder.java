@@ -17,9 +17,9 @@ public class FeignErrorDecoder implements ErrorDecoder {
                 break;
 
             case 404:
-                if(methodKey.contains("get")){
 
-                }
+                //if(methodKey.contains("get")){
+
                 return new ResponseStatusException(HttpStatus.valueOf(response.status()),response.reason());
 
             default:

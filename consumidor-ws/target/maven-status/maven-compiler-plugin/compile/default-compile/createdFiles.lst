@@ -2,9 +2,10 @@ com/spcbrasil/api/consumidor/security/WebSecurity$1.class
 com/spcbrasil/api/consumidor/data/ConsumidorRepository.class
 com/spcbrasil/api/consumidor/mongo/MongoConfig.class
 com/spcbrasil/api/consumidor/security/WebSecurity.class
+com/spcbrasil/api/consumidor/feignclient/PagamentoServiceClientFallback.class
 com/spcbrasil/api/consumidor/controllers/ConsumidorController.class
+com/spcbrasil/api/consumidor/feignclient/PgtoFallbackFactory.class
 com/spcbrasil/api/consumidor/controllers/HomeController.class
-com/spcbrasil/api/consumidor/feignclient/PgtoFallback.class
 com/spcbrasil/api/consumidor/service/impl/ConsumidorServiceImpl.class
 com/spcbrasil/api/consumidor/service/mapper/ConsumidorMapper.class
 com/spcbrasil/api/consumidor/config/AppConfig.class

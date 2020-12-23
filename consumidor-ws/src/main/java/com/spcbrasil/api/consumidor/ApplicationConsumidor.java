@@ -31,9 +31,9 @@ import javax.servlet.Filter;
 @EnableDiscoveryClient
 @EnableSwagger2
 @EnableFeignClients
-@EnableCircuitBreaker
 @EnableMongoRepositories(basePackages = "com.spcbrasil.api.consumidor.data")
 @EnableAsync
+@EnableCircuitBreaker
 public class ApplicationConsumidor {
 
 	public static void main(String[] args) {

@@ -1,6 +1,7 @@
 package com.spcbrasil.api.pagamento.service.impl;
 
 import com.spcbrasil.api.data.model.Pagamento;
+import com.spcbrasil.api.exception.MovimentNotFoundException;
 import com.spcbrasil.api.pagamento.data.PagamentoRepository;
 import com.spcbrasil.api.pagamento.service.PagamentoService;
 import com.spcbrasil.api.pagamento.service.mapper.PagamentoMapper;
@@ -31,10 +32,12 @@ public class PagamentoServiceImpl implements PagamentoService {
 
         List<Pagamento> pgtos = pagamentoRepository.findByConsumidorId(id);
 
-        pgtos.forEach( pagamento -> {
+           pgtos.forEach( pagamento -> {
+
             PagamentoDTO dto = new PagamentoDTO();
             dto = pagamentoMapper.entityToDTO(pagamento, dto);
             pagamentoDTOS.add(dto);
+
         });
 
         response.setPagamentos(pagamentoDTOS);

@@ -37,6 +37,8 @@ public class Pagamento implements Serializable {
 
     private Double valor;
 
+    private String movimento;
+
 
 
 }

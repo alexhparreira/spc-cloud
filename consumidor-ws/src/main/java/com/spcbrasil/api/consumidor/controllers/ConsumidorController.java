@@ -3,6 +3,7 @@ package com.spcbrasil.api.consumidor.controllers;
 import com.spcbrasil.api.consumidor.service.ConsumidorService;
 import com.spcbrasil.api.shared.ConsumidorDTO;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 import org.springframework.core.env.Environment;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -22,7 +23,7 @@ public class ConsumidorController {
 
 
 	@GetMapping(value = "/cpf/{cpf}",  produces = { MediaType.APPLICATION_JSON_VALUE })
-	public ResponseEntity<ConsumidorDTO> getById(@PathVariable String cpf) {
+	public ResponseEntity<ConsumidorDTO> getById(@RequestHeader("Authorization") String token, @PathVariable String cpf) {
 
 		ConsumidorDTO response = consumidorService.findByCPF( Long.parseLong(cpf) );
 		return ResponseEntity.status(HttpStatus.OK).body(response);
