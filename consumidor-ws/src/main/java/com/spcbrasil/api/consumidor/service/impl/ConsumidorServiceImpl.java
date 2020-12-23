@@ -69,22 +69,7 @@ public class ConsumidorServiceImpl implements ConsumidorService {
     public InfoPagamentoDTO getPagamentosUsingFeign(String consumidorId) {
 
         InfoPagamentoDTO response = null;
-
-        try {
-
-
-            logger.info("ANTES de buscar os pagamentos");
-
-            response = pagamentoServiceClient.getById(consumidorId);
-
-
-            logger.info("DEPOIS de buscar os pagamentos");
-
-        } catch (FeignException e){
-            e.printStackTrace();
-        }
-
-
+        response = pagamentoServiceClient.getById(consumidorId);
         return response;
 
     }
