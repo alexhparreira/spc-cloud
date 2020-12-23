@@ -5,6 +5,7 @@ import com.spcbrasil.api.converters.ZonedDateTimeReadConverter;
 import com.spcbrasil.api.converters.ZonedDateTimeWriteConverter;
 import com.spcbrasil.api.data.model.Consumidor;
 import com.spcbrasil.api.data.model.Pagamento;
+import com.spcbrasil.api.data.model.Usuario;
 import com.spcbrasil.api.util.Constants;
 import com.spcbrasil.api.util.DateUtils;
 import com.spcbrasil.api.util.StringUtil;
@@ -18,6 +19,7 @@ import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.convert.DefaultDbRefResolver;
 import org.springframework.data.mongodb.core.convert.MappingMongoConverter;
 import org.springframework.data.mongodb.core.mapping.MongoMappingContext;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
@@ -28,10 +30,16 @@ public class DbSeeder implements CommandLineRunner {
     @Autowired
     private MongoTemplate mongoTemplate;
 
+    @Autowired
+    private BCryptPasswordEncoder passwordEncoder;
+
     private final List<Converter<?, ?>> converters = new ArrayList<Converter<?, ?>>();
 
 
     MongoDbFactory mongoDbFactory;
+
+    @Autowired
+
 
 
 
@@ -63,6 +71,8 @@ public class DbSeeder implements CommandLineRunner {
 
     @Override
     public void run(String... args) {
+
+
 
 
 
@@ -141,6 +151,23 @@ public class DbSeeder implements CommandLineRunner {
            pgto6.setEmpresaId("658000");
            pgto6.setValor(150.0);
            this.mongoTemplate.insert(pgto6);
+
+           Usuario usuario = new Usuario();
+           usuario.setAccountVerified(true);
+           usuario.setEmail("user@spcbrasil.com.br");
+           usuario.setBirthdayDate(StringUtil.addOrSubtractDaysToDate(new Date(),-7200));
+           usuario.setDocumentId("77776543211");
+           usuario.setName("Lucas");
+           String encoded = passwordEncoder.encode("123123");
+           usuario.setPassword(encoded);
+
+           usuario.setPhone("92777777");
+
+           this.mongoTemplate.insert(usuario);
+
+
+
+
 
 
        }
