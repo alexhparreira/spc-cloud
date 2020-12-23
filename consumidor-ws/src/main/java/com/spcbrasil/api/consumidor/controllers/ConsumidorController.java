@@ -2,6 +2,8 @@ package com.spcbrasil.api.consumidor.controllers;
 
 import com.spcbrasil.api.consumidor.service.ConsumidorService;
 import com.spcbrasil.api.shared.ConsumidorDTO;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 import org.springframework.core.env.Environment;
@@ -23,9 +25,16 @@ public class ConsumidorController {
 
 
 	@GetMapping(value = "/cpf/{cpf}",  produces = { MediaType.APPLICATION_JSON_VALUE })
-	public ResponseEntity<ConsumidorDTO> getById(@RequestHeader("Authorization") String token, @PathVariable String cpf) {
+	public ResponseEntity<ConsumidorDTO> getByCPF(@RequestHeader("Authorization") String token, @PathVariable String cpf) {
+
+		Logger logger = LoggerFactory.getLogger(this.getClass());
+
+		logger.info("Entrando no método getByCPF");
 
 		ConsumidorDTO response = consumidorService.findByCPF( Long.parseLong(cpf) );
+
+		logger.info("Retornando os dados de um consumidor");
+
 		return ResponseEntity.status(HttpStatus.OK).body(response);
 	}
 

@@ -11,15 +11,14 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("msgs")
 public class MessageController {
 
-
+//users-ws/msgs/message
 
     @Autowired
     private Environment environment;
 
     @RequestMapping("/message")
     String getMessage() {
-       String message = environment.getProperty("api.chave");
-        return message;
+       return environment.getProperty("api.chave");
     }
 
 }
