@@ -7,6 +7,7 @@ import com.spcbrasil.api.consumidor.feignclient.PagamentoServiceClient;
 import com.spcbrasil.api.consumidor.service.mapper.ConsumidorMapper;
 import com.spcbrasil.api.data.model.Consumidor;
 import com.spcbrasil.api.consumidor.service.ConsumidorService;
+import com.spcbrasil.api.exception.EntityNotFoundException;
 import com.spcbrasil.api.shared.ConsumidorDTO;
 import com.spcbrasil.api.shared.InfoPagamentoDTO;
 import com.spcbrasil.api.shared.PagamentoDTO;
@@ -43,10 +44,17 @@ public class ConsumidorServiceImpl implements ConsumidorService {
     @Override
     public ConsumidorDTO findByCPF(Long cpf) {
 
+        logger.info("Buscando dados do Consumidor - CPF: "+cpf);
+
         Consumidor consumidor = consumidorRepository.findByCpf(cpf);
+
+        if(consumidor==null){
+            throw new EntityNotFoundException("Consumidor não existe - cpf "+cpf);
+        }
 
         ConsumidorDTO consumidorDTO = new ConsumidorDTO();
 
+        logger.info("Buscando dados do Pagamento - ID: "+consumidor.getId());
         InfoPagamentoDTO infoPgto = getPagamentosUsingFeign(consumidor.getId());
 
         consumidorMapper.entityToDTO(consumidor, infoPgto, consumidorDTO);
